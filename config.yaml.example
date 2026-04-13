@@ -1,0 +1,37 @@
+# DeepPresenter PPT 工作流 - 配置文件示例
+# 复制为 config.yaml 并填入实际值
+
+# 文本生成 API（用于内容分析和生成大纲）
+text_api:
+  endpoint: "https://api.openai.com/v1/chat/completions"
+  key: "YOUR_TEXT_API_KEY"
+  model: "gpt-4o"  # 或 gpt-4o-mini, claude-3-sonnet 等
+
+# 图片生成 API（用于生成 PPT 背景图）
+image_api:
+  provider: "doubao"  # doubao / wanx / deepseek
+  endpoint: "https://ark.cn-beijing.volces.com/api/v3/..."
+  key: "YOUR_IMAGE_API_KEY"
+  model: "doubao-seedream-5-0-260128"  # 或你的模型
+
+# PPT 配置
+ppt:
+  width: 1280       # 像素
+  height: 720       # 像素
+  theme: "modern"   # modern / simple / dark
+  font_cn: "PingFang SC"
+  font_en: "Arial"
+
+# 路径配置
+paths:
+  input: "input"           # 知识库文档目录
+  slides: "slides"         # HTML 设计稿目录
+  screenshots: "screenshots" # 分层截图目录
+  output: "output"         # 输出目录
+
+# DeepPresenter 配置
+deeppresenter:
+  enabled: true
+  research_model: "gpt-4o"
+  design_model: "gpt-4o"
+  image_model: "doubao-seedream-5-0"
